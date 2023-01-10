@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto1</title>
+</head>
+<body>
+    <nav>
+          <a href="{% url 'lista_familias' %}">Lista de familias</a>
+          <a href="{% url 'agregar_familia' %}">Agregar familia</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

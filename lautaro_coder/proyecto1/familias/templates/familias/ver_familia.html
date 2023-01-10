@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Familia {{ familia.nombre }}</h1>
+    <p>Miembros: {{ familia.miembros }}</p>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Género</th>
+            <th>Acciones</th>
+        </tr>
+        {% for miembro in miembros %}
+        <tr>
+            <td>{{ miembro.nombre }}</td>
+            <td>{{ miembro.edad }}</td>
+            <td>{{ miembro.genero }}</td>
+            <td>
+                <a href="{% url 'editar_miembro' miembro.id %}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'agregar_miembro' familia.id %}">Agregar miembro</a>
+{% endblock %}
